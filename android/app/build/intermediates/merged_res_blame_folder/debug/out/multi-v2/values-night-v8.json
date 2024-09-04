@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.socialdiary_project.app-mergeDebugResources-36:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.socialdiary_project.app-mergeDebugResources-44:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "C:\\flutter_windows_3.19.5-stable\\flutter\\socialdiary_project\\android\\app\\src\\main\\res\\values-night\\styles.xml",
