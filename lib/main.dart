@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'screens/theme_provider.dart';
-import 'screens/my_home_page.dart';
+/*import 'screens/my_home_page.dart';  // 메인 페이지*/
+import 'screens/login.dart';  // 로그인 페이지 추가
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,14 +24,12 @@ void main() async {
   runApp(
     ChangeNotifierProvider(
       create: (context) => themeProvider,
-      child: MyApp(), // const 제거
+      child: MyApp(),
     ),
   );
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key}); // const 제거
-
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
@@ -38,7 +37,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: themeProvider.themeData,
-      home: MyHomePage(), // const 유지 (MyHomePage는 상수로 사용 가능)
+      home: const LoginPage(title: 'Login Page'),  // LoginPage를 첫 화면으로 설정
     );
   }
 }

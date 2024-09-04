@@ -1,7 +1,6 @@
-//로그인
-
 import 'package:flutter/material.dart';
-import 'reg_account.dart';
+import 'my_home_page.dart'; // MyHomePage 임포트
+import 'reg_account.dart'; // 회원가입 페이지 임포트
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key, required this.title});
@@ -36,36 +35,32 @@ class _LoginPageState extends State<LoginPage> {
 
             const SizedBox(height: 40,),
             Row(
-              mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget> [
                 const SizedBox(width: 20,),
                 const Text(
-                  'ID : ',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.black,
-                  )
+                    'ID : ',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                    )
                 ),
                 const SizedBox(width: 40,),
                 SizedBox(
                   width: 250,
-                  child: Flexible(
-                    child: TextField(
-                      controller: idController,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'ID',
-                      ),
+                  child: TextField(
+                    controller: idController,
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'ID',
                     ),
                   ),
-                )
+                ),
               ],
             ),
 
             const SizedBox(height: 20,),
             Row(
-              mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget> [
                 const Text(
@@ -78,14 +73,12 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(width: 20,),
                 SizedBox(
                   width: 250,
-                  child: Flexible(
-                    child: TextField(
-                      controller: pswdController,
-                      obscureText: true,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'PASSWORD',
-                      ),
+                  child: TextField(
+                    controller: pswdController,
+                    obscureText: true,
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'PASSWORD',
                     ),
                   ),
                 )
@@ -94,15 +87,18 @@ class _LoginPageState extends State<LoginPage> {
 
             const SizedBox(height: 40,),
             ElevatedButton(
-                onPressed: (){
-                  id = idController.text;
-                  password = pswdController.text;
-                  /*Navigator.push(
-                    context,
-                    MaterialPageRoute(builder:(context) => const MainPage()),
-                  );*/
-                },
-                child: const Text('로그인'), )
+              onPressed: () {
+                id = idController.text;
+                password = pswdController.text;
+
+                // 로그인 성공 시 MyHomePage로 이동
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => MyHomePage()), // MyHomePage로 이동
+                );
+              },
+              child: const Text('로그인'),
+            ),
           ],
         ),
       ),
@@ -113,7 +109,6 @@ class _LoginPageState extends State<LoginPage> {
         child: extendButton(),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-
     );
   }
 
@@ -121,9 +116,9 @@ class _LoginPageState extends State<LoginPage> {
     return FloatingActionButton.extended(
       onPressed: (){
         Navigator.push(
-              context,
-              MaterialPageRoute(builder:(context) => const Reg_AccountPage(title: 'Account Registering Page',)),
-            );
+          context,
+          MaterialPageRoute(builder: (context) => const Reg_AccountPage(title: 'Account Registering Page',)),
+        );
       },
       label: const Text("회원가입"),
       isExtended: true,

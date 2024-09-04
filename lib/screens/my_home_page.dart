@@ -2,8 +2,11 @@
 // 친구, 메인, 켈린더 페이지 포함
 
 import 'package:flutter/material.dart';
+/*import 'calendar_view.dart'; // 캘린더 뷰 페이지
+import 'friend_view.dart'; // 친구 목록 페이지
+import 'main_view.dart'; // 메인 페이지*/
+import 'dialogs.dart'; // 그룹 생성 다이얼로그
 import 'settings_page.dart';
-import 'dialogs.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'shared_diary_page.dart';
 
@@ -63,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => SettingsPage()), // const 제거
+                    MaterialPageRoute(builder: (context) => SettingsPage()), // SettingsPage로 이동
                   );
                 },
               ),
