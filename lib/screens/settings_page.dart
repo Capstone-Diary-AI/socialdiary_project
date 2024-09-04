@@ -1,4 +1,4 @@
-// 설정 페이지
+//설정 페이지
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -26,20 +26,20 @@ class SettingsPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SwitchListTile(
-              title: Text('다크 모드', style: Theme.of(context).textTheme.bodyLarge),
+              title: Text('다크 모드', style: Theme.of(context).textTheme.bodyLarge),  // bodyText1 -> bodyLarge
               value: themeProvider.themeData.brightness == Brightness.dark,
               onChanged: (value) {
                 themeProvider.toggleTheme(value);
               },
             ),
             SizedBox(height: 20),
-            Text("글꼴 선택", style: Theme.of(context).textTheme.bodyLarge),
+            Text("글꼴 선택", style: Theme.of(context).textTheme.bodyLarge),  // bodyText1 -> bodyLarge
             DropdownButton<String>(
               value: themeProvider.fontFamily,
               items: fonts.map((String font) {
                 return DropdownMenuItem<String>(
                   value: font,
-                  child: Text(font, style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color)),
+                  child: Text(font, style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color)),  // bodyText1 -> bodyLarge
                 );
               }).toList(),
               onChanged: (String? newFont) {
@@ -48,19 +48,19 @@ class SettingsPage extends StatelessWidget {
                 }
               },
               style: TextStyle(
-                color: Theme.of(context).textTheme.bodyLarge?.color,
-                fontSize: Theme.of(context).textTheme.bodyLarge?.fontSize,
+                color: Theme.of(context).textTheme.bodyLarge?.color,  // bodyText1 -> bodyLarge
+                fontSize: Theme.of(context).textTheme.bodyLarge?.fontSize,  // bodyText1 -> bodyLarge
               ),
             ),
 
             SizedBox(height: 20),
-            Text("글자 크기 선택", style: Theme.of(context).textTheme.bodyLarge),
+            Text("글자 크기 선택", style: Theme.of(context).textTheme.bodyLarge),  // bodyText1 -> bodyLarge
             DropdownButton<double>(
               value: themeProvider.fontSize,
               items: fontSizes.map((double size) {
                 return DropdownMenuItem<double>(
                   value: size,
-                  child: Text(size.toString(), style: Theme.of(context).textTheme.bodyLarge),
+                  child: Text(size.toString(), style: Theme.of(context).textTheme.bodyLarge),  // bodyText1 -> bodyLarge
                 );
               }).toList(),
               onChanged: (double? newSize) {

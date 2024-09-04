@@ -6,14 +6,14 @@ import 'diary_model.dart';
 class DiaryDetailPage extends StatelessWidget {
   final Diary diary;
 
-  DiaryDetailPage({required this.diary});
+  const DiaryDetailPage({super.key, required this.diary});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(diary.title)),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

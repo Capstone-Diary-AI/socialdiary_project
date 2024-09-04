@@ -1,5 +1,5 @@
 // 메인 페이지
-// 친구, 메인, 캘린더 페이지 포함
+// 친구, 메인, 켈린더 페이지 포함
 
 import 'package:flutter/material.dart';
 import 'settings_page.dart';
@@ -124,7 +124,7 @@ class _MainViewState extends State<MainView> {
               Text(
                 '카테고리: ',
                 style: TextStyle(
-                  color: Theme.of(context).textTheme.bodyLarge?.color,
+                  color: Theme.of(context).textTheme.bodyLarge?.color, // bodyText1 -> bodyLarge
                 ),
               ),
               DropdownButton<String>(
@@ -142,8 +142,8 @@ class _MainViewState extends State<MainView> {
                   );
                 }).toList(),
                 style: TextStyle(
-                  color: Theme.of(context).textTheme.bodyLarge?.color,
-                  fontSize: Theme.of(context).textTheme.bodyLarge?.fontSize,
+                  color: Theme.of(context).textTheme.bodyLarge?.color, // bodyText1 -> bodyLarge
+                  fontSize: Theme.of(context).textTheme.bodyLarge?.fontSize, // bodyText1 -> bodyLarge
                 ),
               ),
             ],
@@ -158,7 +158,7 @@ class _MainViewState extends State<MainView> {
                 flexibleSpace: FlexibleSpaceBar(
                   title: Text(
                     '일기 목록',
-                    style: Theme.of(context).textTheme.headlineSmall,
+                    style: Theme.of(context).textTheme.headlineSmall, // headline6 -> headlineSmall
                   ),
                   centerTitle: false,
                   titlePadding: EdgeInsets.all(16.0),
@@ -172,7 +172,7 @@ class _MainViewState extends State<MainView> {
                       title: Text(
                         (personalDiaries.contains(diary) ? '[개인] ' : '[공유] ') + diary,
                         style: TextStyle(
-                          color: Theme.of(context).textTheme.bodyLarge?.color,
+                          color: Theme.of(context).textTheme.bodyLarge?.color, // bodyText1 -> bodyLarge
                         ),
                       ),
                       onTap: () {
@@ -227,7 +227,7 @@ class FriendView extends StatelessWidget {
           pinned: true,
           expandedHeight: 50.0,
           flexibleSpace: FlexibleSpaceBar(
-            title: Text('친구 목록', style: Theme.of(context).textTheme.headlineSmall),
+            title: Text('친구 목록', style: Theme.of(context).textTheme.headlineSmall), // headline6 -> headlineSmall
             centerTitle: false,
             titlePadding: EdgeInsets.all(16.0),
           ),
@@ -239,7 +239,7 @@ class FriendView extends StatelessWidget {
                 title: Text(
                   friends[index],
                   style: TextStyle(
-                    color: Theme.of(context).textTheme.bodyLarge?.color,
+                    color: Theme.of(context).textTheme.bodyLarge?.color, // bodyText1 -> bodyLarge
                   ),
                 ),
                 onTap: () {

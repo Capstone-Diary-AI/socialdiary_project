@@ -1,10 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'diary_model.dart';
-
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
+
+import 'package:hive/hive.dart';
+
+import 'diary_model.dart';
 
 class DiaryAdapter extends TypeAdapter<Diary> {
   @override
@@ -54,3 +56,4 @@ class DiaryAdapter extends TypeAdapter<Diary> {
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
+

@@ -18,13 +18,13 @@ void showCreateGroupDialog(BuildContext context, int state) {
         return AlertDialog(
           title: Text(
             "무엇을 하시겠습니까?" + "$state",
-            style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color),
+            style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color),  // Updated
           ),
           actions: <Widget>[
             TextButton(
               child: Text(
                 "그룹 만들기",
-                style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color),
+                style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color),  // Updated
               ),
               onPressed: () {
                 Navigator.of(context).pop();
@@ -34,7 +34,7 @@ void showCreateGroupDialog(BuildContext context, int state) {
             TextButton(
               child: Text(
                 "친구 추가하기",
-                style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color),
+                style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color),  // Updated
               ),
               onPressed: () {
                 Navigator.of(context).pop();
@@ -57,14 +57,14 @@ void showSelectFriendsDialog(BuildContext context) {
       return AlertDialog(
         title: Text(
           "친구를 선택하세요",
-          style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color),
+          style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color),  // Updated
         ),
         content: FriendSelector(),
         actions: <Widget>[
           TextButton(
             child: Text(
               "완료",
-              style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color),
+              style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color),  // Updated
             ),
             onPressed: () {
               Navigator.of(context).pop();
@@ -84,7 +84,7 @@ void showAddFriendDialog(BuildContext context) {
       return AlertDialog(
         title: Text(
           "추가할 친구의 ID를 입력하세요",
-          style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color),
+          style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color),  // Updated
         ),
         content: const TextField(
           decoration: InputDecoration(
@@ -96,7 +96,7 @@ void showAddFriendDialog(BuildContext context) {
           TextButton(
             child: Text(
               "완료",
-              style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color),
+              style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color),  // Updated
             ),
             onPressed: () {
               Navigator.of(context).pop();
