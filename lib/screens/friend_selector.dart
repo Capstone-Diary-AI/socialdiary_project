@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class FriendSelector extends StatelessWidget {
+  const FriendSelector({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 150.0, // 조정 가능
       width: double.maxFinite,
       child: ListView.builder(

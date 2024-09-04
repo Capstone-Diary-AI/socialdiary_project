@@ -9,7 +9,7 @@ void showCreateGroupDialog(BuildContext context, int state) {
     Navigator.of(context).pop();
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => WritePage(title: '일기 작성하기')),
+      MaterialPageRoute(builder: (context) => const WritePage(title: '일기 작성하기')),
     );
   } else if (state == 1) {
     showDialog(
@@ -17,7 +17,7 @@ void showCreateGroupDialog(BuildContext context, int state) {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(
-            "무엇을 하시겠습니까?" + "$state",
+            "무엇을 하시겠습니까?" "$state",
             style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color),  // Updated
           ),
           actions: <Widget>[

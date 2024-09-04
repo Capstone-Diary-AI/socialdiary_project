@@ -18,10 +18,10 @@ class DiaryDetailPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('Date: ${diary.date.toLocal().toString().split(' ')[0]}',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-            SizedBox(height: 16),
-            Text(diary.content, style: TextStyle(fontSize: 16)),
-            SizedBox(height: 16),
+                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            const SizedBox(height: 16),
+            Text(diary.content, style: const TextStyle(fontSize: 16)),
+            const SizedBox(height: 16),
             Expanded(
               child: GoogleMap(
                 initialCameraPosition: CameraPosition(

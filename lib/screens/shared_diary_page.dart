@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 class SharedDiaryPage extends StatelessWidget {
   final String diaryTitle;
 
-  SharedDiaryPage({required this.diaryTitle});
+  const SharedDiaryPage({super.key, required this.diaryTitle});
 
   @override
   Widget build(BuildContext context) {
-    final diaryContent = '''
+    const diaryContent = '''
 오늘 아침에는 일찍 일어나 커피를 한 잔 마시며 하루를 시작했어요. 창문을 열어보니 햇살이 눈부시게 내리쬐고 있었고, 기분 좋은 바람이 방 안으로 들어오면서 상쾌한 기운이 온몸에 퍼졌어요. 아침 식사로는 토스트와 계란후라이, 그리고 과일 몇 조각을 먹었어요. 간단하지만 영양가 있는 식사 덕분에 에너지가 넘쳤죠. 
 
 _민지가 아침 식사를 준비했는데, 정말 맛있었어요._
@@ -52,7 +52,7 @@ _드라마를 본 후, 우리는 보드게임을 하며 시간을 보냈어요._
                   padding: const EdgeInsets.symmetric(vertical: 4.0),
                   child: Text(
                     line.replaceAll('_', ''),
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16.0,
                       fontStyle: FontStyle.italic,
                       color: Colors.blueGrey,
@@ -64,7 +64,7 @@ _드라마를 본 후, 우리는 보드게임을 하며 시간을 보냈어요._
                   padding: const EdgeInsets.symmetric(vertical: 4.0),
                   child: Text(
                     line,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16.0,
                     ),
                   ),

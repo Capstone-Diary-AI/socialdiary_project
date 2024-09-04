@@ -23,12 +23,14 @@ void main() async {
   runApp(
     ChangeNotifierProvider(
       create: (context) => themeProvider,
-      child: MyApp(),
+      child: MyApp(), // const 제거
     ),
   );
 }
 
 class MyApp extends StatelessWidget {
+  MyApp({super.key}); // const 제거
+
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
@@ -36,7 +38,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: themeProvider.themeData,
-      home: MyHomePage(),
+      home: MyHomePage(), // const 유지 (MyHomePage는 상수로 사용 가능)
     );
   }
 }

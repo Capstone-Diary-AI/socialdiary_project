@@ -94,7 +94,7 @@ class _WritePageState extends State<WritePage> {
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: Text(widget.title),
           leading: IconButton(
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
             onPressed: _onWillPop,
           ),
         ),
@@ -168,7 +168,7 @@ class _WritePageState extends State<WritePage> {
                       _currentPosition != null
                           ? "위치: ${_currentAddress ?? '주소를 가져오는 중...'}"
                           : "위치를 가져오는 중...",
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                     ),
                   ),
                   ElevatedButton(

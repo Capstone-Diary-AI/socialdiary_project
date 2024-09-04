@@ -8,6 +8,9 @@ import 'package:table_calendar/table_calendar.dart';
 import 'shared_diary_page.dart';
 
 class MyHomePage extends StatefulWidget {
+  // const 키워드를 제거합니다.
+  MyHomePage({super.key});
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -56,11 +59,11 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
           appBar: AppBar(
             actions: <Widget>[
               IconButton(
-                icon: Icon(Icons.settings),
+                icon: const Icon(Icons.settings),
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => SettingsPage()),
+                    MaterialPageRoute(builder: (context) => SettingsPage()), // const 제거
                   );
                 },
               ),
@@ -84,8 +87,8 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () => showCreateGroupDialog(context, state),
-            child: Icon(Icons.add),
             tooltip: '그룹 생성',
+            child: const Icon(Icons.add),
           ),
         ),
       ),
@@ -94,6 +97,8 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
 }
 
 class MainView extends StatefulWidget {
+  const MainView({super.key});
+
   @override
   _MainViewState createState() => _MainViewState();
 }
@@ -161,7 +166,7 @@ class _MainViewState extends State<MainView> {
                     style: Theme.of(context).textTheme.headlineSmall, // headline6 -> headlineSmall
                   ),
                   centerTitle: false,
-                  titlePadding: EdgeInsets.all(16.0),
+                  titlePadding: const EdgeInsets.all(16.0),
                 ),
               ),
               SliverList(
@@ -188,11 +193,11 @@ class _MainViewState extends State<MainView> {
                             context: context,
                             builder: (BuildContext context) {
                               return AlertDialog(
-                                title: Text('일기 선택'),
+                                title: const Text('일기 선택'),
                                 content: Text('$diary 선택됨'),
                                 actions: <Widget>[
                                   TextButton(
-                                    child: Text('확인'),
+                                    child: const Text('확인'),
                                     onPressed: () {
                                       Navigator.of(context).pop();
                                     },
@@ -219,6 +224,8 @@ class _MainViewState extends State<MainView> {
 class FriendView extends StatelessWidget {
   final List<String> friends = List.generate(40, (index) => '친구 $index');
 
+  FriendView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -229,7 +236,7 @@ class FriendView extends StatelessWidget {
           flexibleSpace: FlexibleSpaceBar(
             title: Text('친구 목록', style: Theme.of(context).textTheme.headlineSmall), // headline6 -> headlineSmall
             centerTitle: false,
-            titlePadding: EdgeInsets.all(16.0),
+            titlePadding: const EdgeInsets.all(16.0),
           ),
         ),
         SliverList(
@@ -247,11 +254,11 @@ class FriendView extends StatelessWidget {
                     context: context,
                     builder: (BuildContext context) {
                       return AlertDialog(
-                        title: Text('친구 선택'),
+                        title: const Text('친구 선택'),
                         content: Text('${friends[index]} 선택됨'),
                         actions: <Widget>[
                           TextButton(
-                            child: Text('확인'),
+                            child: const Text('확인'),
                             onPressed: () {
                               Navigator.of(context).pop();
                             },
@@ -274,9 +281,11 @@ class FriendView extends StatelessWidget {
 class FriendSelector extends StatelessWidget {
   final List<String> friends = List.generate(40, (index) => '친구 $index');
 
+  FriendSelector({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 150.0,
       width: double.maxFinite,
       child: ListView.builder(
@@ -295,6 +304,8 @@ class FriendSelector extends StatelessWidget {
 }
 
 class CalendarView extends StatefulWidget {
+  const CalendarView({super.key});
+
   @override
   _CalendarViewState createState() => _CalendarViewState();
 }
@@ -302,11 +313,11 @@ class CalendarView extends StatefulWidget {
 class _CalendarViewState extends State<CalendarView> {
   DateTime _focusedDay = DateTime.now();
   DateTime? _selectedDay;
-  Map<DateTime, List<String>> _events = {
+  final Map<DateTime, List<String>> _events = {
     DateTime.utc(2023, 6, 1): ['Event 1', 'Event 2'],
     DateTime.utc(2023, 6, 2): ['Event 3'],
   };
-  Map<DateTime, String> _notes = {};
+  final Map<DateTime, String> _notes = {};
 
   final TextEditingController _noteController = TextEditingController();
 
@@ -340,12 +351,12 @@ class _CalendarViewState extends State<CalendarView> {
             children: [
               Text(
                 'Selected Day: ${_selectedDay!.toLocal()}',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 8.0),
               TextField(
                 controller: _noteController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: '메모',
                 ),
@@ -358,14 +369,14 @@ class _CalendarViewState extends State<CalendarView> {
                     _notes[_selectedDay!] = _noteController.text;
                   });
                 },
-                child: Text('저장'),
+                child: const Text('저장'),
               ),
               const SizedBox(height: 8.0),
               Expanded(child: _buildEventList()),
             ],
           ),
         )
-            : Expanded(child: Center(child: Text('날짜를 선택하세요'))),
+            : const Expanded(child: Center(child: Text('날짜를 선택하세요'))),
       ],
     );
   }

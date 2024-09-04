@@ -1,8 +1,6 @@
 //로그인
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'reg_account.dart';
 
 class LoginPage extends StatefulWidget {

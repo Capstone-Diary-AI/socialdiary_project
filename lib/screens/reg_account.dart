@@ -1,8 +1,6 @@
 //로그인
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class Reg_AccountPage extends StatefulWidget {
   const Reg_AccountPage({super.key, required this.title});
