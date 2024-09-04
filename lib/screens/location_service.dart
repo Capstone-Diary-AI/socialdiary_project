@@ -1,3 +1,4 @@
+/*
 import 'package:geolocator/geolocator.dart';
 
 class LocationService {
@@ -17,3 +18,4 @@ class LocationService {
 
   List<Position> get positions => _positions;
 }
+*/

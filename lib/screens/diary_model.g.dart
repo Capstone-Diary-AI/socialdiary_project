@@ -1,3 +1,4 @@
+/*
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -57,3 +58,4 @@ class DiaryAdapter extends TypeAdapter<Diary> {
           typeId == other.typeId;
 }
 
+*/
