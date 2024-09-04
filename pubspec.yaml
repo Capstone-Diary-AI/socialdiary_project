@@ -43,9 +43,14 @@ dependencies:
   geocoding: ^2.0.0
   permission_handler: ^10.2.0
   google_maps_flutter: ^2.9.0
+  hive: ^2.0.0 # Hive 패키지 추가
+  hive_flutter: ^1.1.0 # Hive를 Flutter와 함께 사용하기 위한 패키지 (필요 시)
+  path_provider: ^2.0.0 # Hive 데이터를 파일로 저장하기 위해 필요한 패키지
 
 
 dev_dependencies:
+  hive_generator: ^1.1.0 # Hive 어댑터 생성을 위한 코드 생성기
+  build_runner: ^2.0.0 # 코드 생성을 위한 도구
   flutter_test:
     sdk: flutter
 

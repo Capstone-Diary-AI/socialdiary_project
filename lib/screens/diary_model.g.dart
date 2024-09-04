@@ -1,4 +1,3 @@
-/*
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -6,7 +5,6 @@
 // **************************************************************************
 
 import 'package:hive/hive.dart';
-
 import 'diary_model.dart';
 
 class DiaryAdapter extends TypeAdapter<Diary> {
@@ -58,4 +56,3 @@ class DiaryAdapter extends TypeAdapter<Diary> {
           typeId == other.typeId;
 }
 
-*/
