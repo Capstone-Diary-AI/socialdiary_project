@@ -6,7 +6,7 @@ buildscript {
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'com.android.tools.build:gradle:7.0.2'  // 필요 시 최신 버전으로 업데이트
+        classpath 'com.android.tools.build:gradle:7.2.2'  // 필요 시 최신 버전으로 업데이트
     }
 }
 
