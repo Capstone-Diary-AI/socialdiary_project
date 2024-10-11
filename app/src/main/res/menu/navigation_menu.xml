@@ -3,13 +3,21 @@
     <item
         android:id="@+id/nav_friends"
         android:icon="@drawable/ic_friends"
-        android:title="친구" />
+        android:title="친구"
+        android:iconTint="@color/color_inactive"
+        android:titleTextColor="@color/color_inactive"/>
+
     <item
         android:id="@+id/nav_diary"
         android:icon="@drawable/ic_diary"
-        android:title="일기" />
+        android:title="일기"
+        android:iconTint="@color/color_inactive"
+        android:titleTextColor="@color/color_inactive"/>
+
     <item
         android:id="@+id/nav_calendar"
         android:icon="@drawable/ic_calendar"
-        android:title="캘린더" />
+        android:title="캘린더"
+        android:iconTint="@color/color_inactive"
+        android:titleTextColor="@color/color_inactive"/>
 </menu>

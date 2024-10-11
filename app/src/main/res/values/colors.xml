@@ -7,4 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="color_bright">#FFFFFF</color> <!-- 밝은 색상 -->
+    <color name="color_active">#000000</color> <!-- 강조 색상 -->
+    <color name="color_inactive">#999999</color> <!-- 비활성화 색상 -->
 </resources>
