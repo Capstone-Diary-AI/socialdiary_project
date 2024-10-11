@@ -1,0 +1,46 @@
+<!-- activity_diary_entry.xml
+     제목, 날짜 선택, 위치, 일기 내용, 사진 선택 레이아웃 -->
+<!-- activity_diary_entry.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/edittext_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="제목" />
+
+    <Button
+        android:id="@+id/button_select_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="날짜 선택" />
+
+    <TextView
+        android:id="@+id/textview_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="위치를 가져오는 중..." />
+
+    <Button
+        android:id="@+id/button_refresh_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="위치 갱신" />
+
+    <EditText
+        android:id="@+id/edittext_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="일기 내용" />
+
+    <Button
+        android:id="@+id/button_save_diary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="저장" />
+</LinearLayout>

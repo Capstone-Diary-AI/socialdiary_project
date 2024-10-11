@@ -1,0 +1,20 @@
+<resources>
+    <!-- 앱 이름 정의 -->
+    <string name="app_name">SocialDiary</string>
+
+    <!-- 글꼴 선택을 위한 배열 -->
+    <string-array name="font_array">
+        <item>DancingScript</item>
+        <item>Roboto</item>
+        <item>SansSerif</item>
+    </string-array>
+
+    <!-- 글자 크기 선택을 위한 배열 -->
+    <string-array name="font_size_array">
+        <item>12</item>
+        <item>14</item>
+        <item>16</item>
+        <item>18</item>
+        <item>20</item>
+    </string-array>
+</resources>

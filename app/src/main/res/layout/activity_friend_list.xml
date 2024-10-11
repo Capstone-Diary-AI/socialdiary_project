@@ -1,0 +1,21 @@
+<!-- activity_friend_list.xml
+     친구 목록 레이아웃 -->
+<!-- activity_friend_list.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ListView
+        android:id="@+id/listview_friends"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <Button
+        android:id="@+id/button_add_friend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="친구 추가" />
+</LinearLayout>
