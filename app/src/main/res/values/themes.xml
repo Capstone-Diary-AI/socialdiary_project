@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- DayNight 테마 사용 -->
+    <!-- 앱 기본 테마를 DayNight 테마로 설정 -->
     <style name="Theme.Socialdiary_project" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- 공통 색상 설정 (밝은 모드 및 다크 모드 모두에 적용) -->
+        <!-- Customize your theme here -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
-        <item name="colorOnPrimary">@color/colorOnPrimary</item>
-        <item name="colorSecondary">@color/colorAccent</item>
-        <!-- 시스템 기본 액션바 크기 -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
         <item name="actionBarSize">?attr/actionBarSize</item>
     </style>
-    <style name="Theme.Socialdiary_project" parent="android:Theme.Material.Light.NoActionBar" />
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <!-- Customize your theme here -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
         <item name="actionBarSize">?attr/actionBarSize</item>
     </style>
 </resources>

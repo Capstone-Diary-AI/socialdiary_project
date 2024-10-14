@@ -8,8 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
 import android.widget.Spinner
 import android.widget.ArrayAdapter
-import android.widget.ImageButton
-import android.widget.Switch
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.socialdiary_project.R
 
@@ -24,7 +22,6 @@ class SettingsActivity : AppCompatActivity() {
 
         // 상단 네비게이션 바 설정
         val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.settings_toolbar)
-        val darkModeSwitch = findViewById<Switch>(R.id.dark_mode_switch)
         setSupportActionBar(toolbar)
 
         // 뒤로가기 버튼 클릭 리스너
@@ -32,7 +29,9 @@ class SettingsActivity : AppCompatActivity() {
             onBackPressed() // 뒤로가기 기능 수행
         }
 
-        // 다크 모드 스위치
+        // 다크 모드 스위치 (SwitchCompat 사용)
+        darkModeSwitch = findViewById(R.id.switch_dark_mode)
+
         // 현재 모드에 따라 스위치 상태 설정
         darkModeSwitch.isChecked = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
 
