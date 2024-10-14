@@ -8,6 +8,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="color_bright">#FFFFFF</color> <!-- 밝은 색상 -->
-    <color name="color_active">#000000</color> <!-- 강조 색상 -->
-    <color name="color_inactive">#999999</color> <!-- 비활성화 색상 -->
+    <color name="bright_highlight">#FF4081</color>
+    <color name="dim_color">#D3D3D3</color>
+    <color name="color_active">#000000</color> <!-- 검정색 -->
+    <color name="color_inactive">#808080</color> <!-- 회색 -->
+    <color name="color_background">#FFFFFF</color> <!-- 흰색 배경 -->
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorBackground">#FFFFFF</color> <!-- 밝은 배경색 -->
 </resources>
