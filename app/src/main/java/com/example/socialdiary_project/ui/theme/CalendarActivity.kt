@@ -3,11 +3,13 @@
 
 package com.example.socialdiary_project.ui.theme
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.CalendarView
-import android.widget.Button
+import android.widget.ImageButton
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat.startActivity
 import com.example.socialdiary_project.R
 
 class CalendarActivity : AppCompatActivity() {
@@ -19,21 +21,5 @@ class CalendarActivity : AppCompatActivity() {
         calendarView.setOnDateChangeListener { _, _, _, _ ->
             // 날짜 선택 로직 추가
         }
-
-        // 팝업 버튼
-        val popupButton = findViewById<Button>(R.id.button_popup)
-        popupButton.setOnClickListener {
-            showFriendActionDialog()
-        }
-    }
-
-    private fun showFriendActionDialog() {
-        val options = arrayOf("그룹 만들기", "친구 추가하기")
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("무엇을 하시겠습니까?")
-            .setItems(options) { _, _ ->
-                // 선택한 작업 처리
-            }
-        builder.create().show()
     }
 }

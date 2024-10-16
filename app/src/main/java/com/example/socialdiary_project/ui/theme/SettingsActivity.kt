@@ -8,10 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
 import android.widget.Spinner
 import android.widget.ArrayAdapter
-import androidx.appcompat.app.AppCompatDelegate
 import com.example.socialdiary_project.R
 
 class SettingsActivity : AppCompatActivity() {
+
     private lateinit var darkModeSwitch: SwitchCompat
     private lateinit var fontSpinner: Spinner
     private lateinit var fontSizeSpinner: Spinner
@@ -29,20 +29,10 @@ class SettingsActivity : AppCompatActivity() {
             onBackPressed() // 뒤로가기 기능 수행
         }
 
-        // 다크 모드 스위치 (SwitchCompat 사용)
+        // 다크 모드 스위치 (기능은 비활성화)
         darkModeSwitch = findViewById(R.id.switch_dark_mode)
-
-        // 현재 모드에 따라 스위치 상태 설정
-        darkModeSwitch.isChecked = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
-
         darkModeSwitch.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                // 다크 모드 활성화
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            } else {
-                // 라이트 모드 활성화
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            }
+            // 다크 모드 기능을 수행하지 않도록 비워둠
         }
 
         // 글꼴 선택

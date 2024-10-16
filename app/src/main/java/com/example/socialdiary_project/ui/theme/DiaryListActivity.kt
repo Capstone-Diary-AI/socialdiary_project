@@ -4,7 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.example.socialdiary_project.R
 import com.google.android.material.bottomnavigation.BottomNavigationView

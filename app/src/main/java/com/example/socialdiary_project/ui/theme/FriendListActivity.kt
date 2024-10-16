@@ -3,12 +3,14 @@
 
 package com.example.socialdiary_project.ui.theme
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import android.widget.Button
 import android.widget.ListView
 import androidx.appcompat.app.AlertDialog
 import android.widget.ArrayAdapter
+import android.widget.ImageButton
+import androidx.core.content.ContextCompat.startActivity
 import com.example.socialdiary_project.R
 
 class FriendListActivity : AppCompatActivity() {
@@ -22,20 +24,5 @@ class FriendListActivity : AppCompatActivity() {
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, friends)
         friendListView.adapter = adapter
 
-        // 팝업 버튼
-        val addButton = findViewById<Button>(R.id.button_add_friend)
-        addButton.setOnClickListener {
-            showFriendActionDialog()
-        }
-    }
-
-    private fun showFriendActionDialog() {
-        val options = arrayOf("그룹 만들기", "친구 추가하기")
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("무엇을 하시겠습니까?")
-            .setItems(options) { _, _ ->
-                // 선택한 작업 처리
-            }
-        builder.create().show()
     }
 }

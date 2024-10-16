@@ -14,25 +14,47 @@
         app:titleTextColor="@android:color/white"
         android:elevation="4dp">
 
-        <!-- 왼쪽 페이지 이름 표시 -->
-        <TextView
-            android:id="@+id/page_title"
-            android:layout_width="wrap_content"
+        <!-- 상단 네비게이션 레이아웃 -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:text="일기 목록"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
+            android:orientation="horizontal">
 
-        <!-- 오른쪽 설정 버튼 -->
-        <ImageButton
-            android:id="@+id/settings_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:src="@drawable/ic_settings"
-            android:contentDescription="Settings"
-            android:background="?attr/selectableItemBackgroundBorderless" />
+            <!-- 왼쪽 페이지 이름 -->
+            <TextView
+                android:id="@+id/page_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="일기 목록"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <!-- 오른쪽 + 버튼과 설정 버튼 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- + 버튼 -->
+                <ImageButton
+                    android:id="@+id/add_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_add"
+                    android:background="?attr/selectableItemBackgroundBorderless" />
+
+                <!-- 설정 버튼 -->
+                <ImageButton
+                    android:id="@+id/settings_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_settings"
+                    android:contentDescription="Settings"
+                    android:background="?attr/selectableItemBackgroundBorderless" />
+            </LinearLayout>
+
+        </LinearLayout>
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -52,6 +74,5 @@
         app:itemIconTint="@color/navigation_item_colors"
         app:itemTextColor="@color/navigation_item_colors"
         android:background="@color/white" />
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
