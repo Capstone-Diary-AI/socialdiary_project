@@ -6,6 +6,8 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <include layout="@layout/toolbar_navigation" />
+
     <!-- 카테고리 필터 버튼 -->
     <Button
         android:id="@+id/button_filter"
@@ -19,4 +21,5 @@
         android:id="@+id/listview_diary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
 </LinearLayout>

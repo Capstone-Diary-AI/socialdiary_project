@@ -4,9 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.startActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.example.socialdiary_project.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -19,17 +17,22 @@ class DiaryListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_diary_list_navigation)
+        setContentView(R.layout.activity_diary_list)
+
+        // ViewPager 중복 설정 방지
+        viewPager = findViewById(R.id.viewPager)
+        if (viewPager.adapter == null) {
+            val fragmentAdapter = ViewPagerFragmentAdapter(this)
+            viewPager.adapter = fragmentAdapter
+
+            // 초기 페이지를 일기 목록으로 설정
+            viewPager.setCurrentItem(1, false)
+        }
 
         // 상단 네비게이션 바 - 페이지 제목 설정
         pageTitle = findViewById(R.id.page_title)
 
-        // ViewPager2 설정
-        viewPager = findViewById(R.id.viewPager)
-        val fragmentAdapter = ViewPagerFragmentAdapter(this)
-        viewPager.adapter = fragmentAdapter
-
-        // ViewPager2 페이지 변경 리스너 - 슬라이드 시 상단 타이틀과 하단 네비게이션 상태 변경
+        // ViewPager 페이지 변경 리스너 설정
         viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
@@ -50,7 +53,7 @@ class DiaryListActivity : AppCompatActivity() {
             }
         })
 
-        // 하단 네비게이션 바와 ViewPager2 연동
+        // 하단 네비게이션 바와 ViewPager 연동
         bottomNavigationView = findViewById(R.id.bottom_navigation)
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
@@ -61,10 +64,14 @@ class DiaryListActivity : AppCompatActivity() {
             true
         }
 
-        // 초기 페이지를 일기 목록으로 설정
-        viewPager.setCurrentItem(1, false)
+        // 플러스 버튼 클릭 이벤트 설정
+        val addButton = findViewById<ImageButton>(R.id.add_button)
+        addButton.setOnClickListener {
+            val intent = Intent(this, DiaryEntryActivity::class.java)
+            startActivity(intent)
+        }
 
-        // 설정 버튼 클릭 시 설정 페이지로 이동
+        // 설정 버튼 클릭 이벤트 설정
         val settingsButton = findViewById<ImageButton>(R.id.settings_button)
         settingsButton.setOnClickListener {
             val intent = Intent(this, SettingsActivity::class.java)

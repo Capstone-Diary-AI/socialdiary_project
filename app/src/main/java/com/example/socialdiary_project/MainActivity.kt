@@ -36,14 +36,5 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, DiaryListActivity::class.java)
             startActivity(intent)
         }
-
-        // 시스템 설정을 따라가도록 DayNight 테마를 설정
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-
-        // 또는 다크 모드를 강제 설정할 때
-        // AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-
-        // 또는 라이트 모드를 강제 설정할 때
-        // AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
     }
 }
