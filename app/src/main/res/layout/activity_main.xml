@@ -1,38 +1,16 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@color/white">
 
-    <EditText
-        android:id="@+id/username_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="아이디"
-        android:inputType="textPersonName"/>
-
-    <EditText
-        android:id="@+id/password_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="비밀번호"
-        android:inputType="textPassword"
-        android:layout_marginTop="16dp"/>
-
-    <Button
-        android:id="@+id/login_button"
+    <!-- 로딩 스크린이나 심플한 로고를 넣을 수 있음 -->
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="로그인"
-        android:layout_marginTop="24dp"/>
+        android:src="@drawable/ic_launcher_foreground"
+        android:contentDescription="@string/app_name" />
 
-    <!-- '메인' 버튼 추가 -->
-    <Button
-        android:id="@+id/button_main"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="메인"
-        android:layout_marginTop="16dp"/>
 </LinearLayout>

@@ -19,20 +19,34 @@ class DiaryListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_diary_list)
 
-        // ViewPager 중복 설정 방지
+        pageTitle = findViewById(R.id.page_title)
         viewPager = findViewById(R.id.viewPager)
-        if (viewPager.adapter == null) {
-            val fragmentAdapter = ViewPagerFragmentAdapter(this)
-            viewPager.adapter = fragmentAdapter
+        bottomNavigationView = findViewById(R.id.bottom_navigation)
 
-            // 초기 페이지를 일기 목록으로 설정
-            viewPager.setCurrentItem(1, false)
+        // ViewPager 어댑터 설정
+        val fragmentAdapter = ViewPagerFragmentAdapter(this)
+        viewPager.adapter = fragmentAdapter
+
+        // 하단 네비게이션 클릭 이벤트 처리
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_friends -> {
+                    viewPager.currentItem = 0  // 친구 목록 페이지
+                    true
+                }
+                R.id.nav_diary -> {
+                    viewPager.currentItem = 1  // 일기 목록 페이지
+                    true
+                }
+                R.id.nav_calendar -> {
+                    viewPager.currentItem = 2  // 캘린더 페이지
+                    true
+                }
+                else -> false
+            }
         }
 
-        // 상단 네비게이션 바 - 페이지 제목 설정
-        pageTitle = findViewById(R.id.page_title)
-
-        // ViewPager 페이지 변경 리스너 설정
+        // ViewPager2 페이지 전환 리스너 설정
         viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
@@ -52,30 +66,5 @@ class DiaryListActivity : AppCompatActivity() {
                 }
             }
         })
-
-        // 하단 네비게이션 바와 ViewPager 연동
-        bottomNavigationView = findViewById(R.id.bottom_navigation)
-        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_friends -> viewPager.currentItem = 0
-                R.id.nav_diary -> viewPager.currentItem = 1
-                R.id.nav_calendar -> viewPager.currentItem = 2
-            }
-            true
-        }
-
-        // 플러스 버튼 클릭 이벤트 설정
-        val addButton = findViewById<ImageButton>(R.id.add_button)
-        addButton.setOnClickListener {
-            val intent = Intent(this, DiaryEntryActivity::class.java)
-            startActivity(intent)
-        }
-
-        // 설정 버튼 클릭 이벤트 설정
-        val settingsButton = findViewById<ImageButton>(R.id.settings_button)
-        settingsButton.setOnClickListener {
-            val intent = Intent(this, SettingsActivity::class.java)
-            startActivity(intent)
-        }
     }
 }

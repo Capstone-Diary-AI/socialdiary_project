@@ -13,9 +13,9 @@
         android:theme="@style/Theme.Socialdiary_project"
         tools:targetApi="31">
 
-        <!-- MainActivity -->
+        <!-- LoginActivity를 첫 번째 화면으로 설정 -->
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.theme.LoginActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -24,6 +24,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- MainActivity는 로그인 후 이동 -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <activity
             android:name=".ui.theme.DiaryListActivity"

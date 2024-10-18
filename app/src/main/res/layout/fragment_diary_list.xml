@@ -3,6 +3,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!-- 일기 목록 관련 UI 요소들을 정의 -->
+    <!-- 상단과 하단 네비게이션바를 포함한 toolbar_navigation.xml -->
+    <include layout="@layout/toolbar_navigation" />
 
+    <!-- 일기 목록 콘텐츠 -->
+    <ListView
+        android:id="@+id/listview_diary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>
