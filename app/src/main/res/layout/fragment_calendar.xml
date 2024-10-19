@@ -3,7 +3,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!-- 상단과 하단 네비게이션바를 포함한 toolbar_navigation.xml -->
+    <!-- 상단 네비게이션바를 포함 -->
     <include layout="@layout/toolbar_navigation" />
 
     <!-- 캘린더 콘텐츠 -->

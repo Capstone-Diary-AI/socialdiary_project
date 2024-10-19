@@ -18,48 +18,23 @@ class DiaryListFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_diary_list, container, false)
 
-        // 상단 네비게이션바 설정
+        // 상단 네비게이션바에서 플러스 버튼과 설정 버튼 찾기
         val toolbar = view.findViewById<Toolbar>(R.id.top_navigation)
-        toolbar.title = "일기 목록"
+        val addButton = toolbar.findViewById<ImageButton>(R.id.add_button)
+        val settingsButton = toolbar.findViewById<ImageButton>(R.id.settings_button)
 
-        // 플러스 버튼: 일기 작성 화면으로 이동
-        val addButton = view.findViewById<ImageButton>(R.id.add_button)
+        // 플러스 버튼 클릭 이벤트 설정
         addButton.setOnClickListener {
             val intent = Intent(activity, DiaryEntryActivity::class.java)
             startActivity(intent)
         }
 
-        // 설정 버튼: 설정 페이지로 이동
-        val settingsButton = view.findViewById<ImageButton>(R.id.settings_button)
+        // 설정 버튼 클릭 이벤트 설정
         settingsButton.setOnClickListener {
             val intent = Intent(activity, SettingsActivity::class.java)
             startActivity(intent)
         }
 
-        // 하단 네비게이션바 유지
-        setupBottomNavigation(view)
-
         return view
-    }
-
-    private fun setupBottomNavigation(view: View) {
-        val bottomNav = view.findViewById<BottomNavigationView>(R.id.bottom_navigation)
-        bottomNav.setOnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_friends -> {
-                    // 친구 페이지로 이동
-                    true
-                }
-                R.id.nav_diary -> {
-                    // 일기 페이지로 이동
-                    true
-                }
-                R.id.nav_calendar -> {
-                    // 캘린더 페이지로 이동
-                    true
-                }
-                else -> false
-            }
-        }
     }
 }
