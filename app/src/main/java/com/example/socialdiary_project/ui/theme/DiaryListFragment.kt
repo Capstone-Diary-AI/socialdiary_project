@@ -1,3 +1,4 @@
+// DiaryListFragment.kt
 package com.example.socialdiary_project.ui.theme
 
 import android.os.Bundle
@@ -13,6 +14,8 @@ class DiaryListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // 프래그먼트 레이아웃 로드
-        return inflater.inflate(R.layout.fragment_diary_list, container, false)
+        val view = inflater.inflate(R.layout.fragment_diary_list, container, false)
+
+        return view
     }
 }
