@@ -1,16 +1,14 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- fragment_friend_list.xml.xml-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <!-- 상단 네비게이션바를 포함 -->
-    <include layout="@layout/toolbar_navigation" />
-
-    <!-- 친구 목록 콘텐츠 -->
     <ListView
         android:id="@+id/listview_friends"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:divider="@android:color/darker_gray"
-        android:dividerHeight="1dp" />
+        android:layout_height="match_parent" />
+
 </LinearLayout>

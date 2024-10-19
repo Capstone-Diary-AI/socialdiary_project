@@ -34,7 +34,7 @@ class LoginActivity : AppCompatActivity() { // 클래스명 변경
         // '메인' 버튼 클릭 시 DiaryListActivity로 이동
         val mainButton = findViewById<Button>(R.id.button_main)
         mainButton.setOnClickListener {
-            val intent = Intent(this, DiaryListActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }

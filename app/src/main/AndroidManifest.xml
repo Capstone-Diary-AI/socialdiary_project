@@ -25,21 +25,17 @@
             </intent-filter>
         </activity>
 
-        <!-- MainActivity는 로그인 후 이동 -->
+        <!-- MainActivity 선언 -->
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.theme.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
+        <!-- 다른 Activity들 선언 -->
         <activity
             android:name=".ui.theme.DiaryListActivity"
             android:label="일기 목록"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
-        <activity
-            android:name=".ui.theme.DiaryEntryActivity"
-            android:label="일기 작성"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <activity
@@ -50,6 +46,11 @@
         <activity
             android:name=".ui.theme.CalendarActivity"
             android:label="캘린더"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity
+            android:name=".ui.theme.DiaryEntryActivity"
+            android:label="일기 작성"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <activity

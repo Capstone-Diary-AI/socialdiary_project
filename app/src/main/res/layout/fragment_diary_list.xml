@@ -1,16 +1,23 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- fragment_diary_list.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <!-- 상단 네비게이션바를 포함 -->
-    <include layout="@layout/toolbar_navigation" />
+    <!-- 카테고리 필터 버튼 -->
+    <Button
+        android:id="@+id/button_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="카테고리: 모두" />
 
-    <!-- 일기 목록 콘텐츠 -->
+
+    <!-- 일기 목록을 보여줄 ListView -->
     <ListView
         android:id="@+id/listview_diary"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:divider="@android:color/darker_gray"
-        android:dividerHeight="1dp" />
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

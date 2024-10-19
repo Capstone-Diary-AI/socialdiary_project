@@ -1,25 +1,28 @@
 package com.example.socialdiary_project.ui.theme
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.TextView
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.viewpager2.widget.ViewPager2
 import com.example.socialdiary_project.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class DiaryListActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var viewPager: ViewPager2
     private lateinit var bottomNavigationView: BottomNavigationView
-    private lateinit var pageTitle: TextView
+    private lateinit var toolbar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main) // activity_main에 ViewPager와 네비게이션바 설정
+        setContentView(R.layout.activity_main)
 
+        // 초기화
         viewPager = findViewById(R.id.viewPager)
         bottomNavigationView = findViewById(R.id.bottom_navigation)
-        pageTitle = findViewById(R.id.page_title) // 상단 네비게이션 바의 제목 텍스트
+        toolbar = findViewById(R.id.top_navigation)
 
         // ViewPager 어댑터 설정
         val fragmentAdapter = ViewPagerFragmentAdapter(this)
@@ -42,22 +45,50 @@ class DiaryListActivity : AppCompatActivity() {
                 when (position) {
                     0 -> {
                         bottomNavigationView.menu.findItem(R.id.nav_friends).isChecked = true
-                        pageTitle.text = "친구 목록" // 페이지에 맞게 제목 설정
+                        toolbar.title = "친구 목록"
                     }
                     1 -> {
                         bottomNavigationView.menu.findItem(R.id.nav_diary).isChecked = true
-                        pageTitle.text = "일기 목록" // 페이지에 맞게 제목 설정
+                        toolbar.title = "일기 목록"
                     }
                     2 -> {
                         bottomNavigationView.menu.findItem(R.id.nav_calendar).isChecked = true
-                        pageTitle.text = "캘린더" // 페이지에 맞게 제목 설정
+                        toolbar.title = "캘린더"
                     }
                 }
             }
         })
 
+        // 상단의 + 버튼과 설정 버튼 클릭 이벤트
+        val addButton = toolbar.findViewById<ImageButton>(R.id.add_button)
+        val settingsButton = toolbar.findViewById<ImageButton>(R.id.settings_button)
+
+        addButton.setOnClickListener {
+            when (viewPager.currentItem) {
+                0 -> {
+                    // 친구 관리 팝업 띄우기
+                    // 예시로 다이얼로그를 띄운다고 가정하겠습니다.
+                    // showFriendManagementDialog()
+                }
+                1 -> {
+                    // 일기 작성 페이지로 이동
+                    val intent = Intent(this, DiaryEntryActivity::class.java)
+                    startActivity(intent)
+                }
+                2 -> {
+                    // 일정 추가 팝업 띄우기
+                    // 예시로 다이얼로그를 띄운다고 가정하겠습니다.
+                    // showCalendarEventDialog()
+                }
+            }
+        }
+
+        settingsButton.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
+
         // 시작 페이지를 일기 목록으로 설정
         viewPager.currentItem = 1
-        pageTitle.text = "일기 목록"
     }
 }
