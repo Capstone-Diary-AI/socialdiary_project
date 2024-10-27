@@ -58,6 +58,22 @@
             android:label="설정"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
+        <!-- 새로 추가된 Activity들 선언 -->
+        <activity
+            android:name=".ui.theme.FindIdActivity"
+            android:label="아이디 찾기"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity
+            android:name=".ui.theme.FindPasswordActivity"
+            android:label="비밀번호 찾기"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity
+            android:name=".ui.theme.RegisterActivity"
+            android:label="회원가입"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
     </application>
 
 </manifest>

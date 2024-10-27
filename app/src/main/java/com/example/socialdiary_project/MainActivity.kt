@@ -1,11 +1,14 @@
+// 파일명: MainActivity.kt
 package com.example.socialdiary_project
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
@@ -98,17 +101,47 @@ class MainActivity : AppCompatActivity() {
 
         // 팝업 내부 버튼 클릭 리스너 설정
         dialogView.findViewById<View>(R.id.btn_add_friend).setOnClickListener {
-            // 친구 추가 로직
+            showAddFriendDialog() // 친구 추가 다이얼로그 표시
             alertDialog.dismiss()
         }
         dialogView.findViewById<View>(R.id.btn_remove_friend).setOnClickListener {
             // 친구 삭제 로직
+            Toast.makeText(this, "친구 삭제 기능 실행", Toast.LENGTH_SHORT).show()
             alertDialog.dismiss()
         }
         dialogView.findViewById<View>(R.id.btn_manage_groups).setOnClickListener {
             // 그룹 관리 로직
+            Toast.makeText(this, "그룹 관리 기능 실행", Toast.LENGTH_SHORT).show()
             alertDialog.dismiss()
         }
+    }
+
+    // 친구 추가 다이얼로그
+    private fun showAddFriendDialog() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("친구 추가")
+
+        // 다이얼로그에 EditText 추가
+        val input = EditText(this)
+        input.hint = "친구 아이디를 입력하세요"
+        builder.setView(input)
+
+        // 다이얼로그 버튼 설정
+        builder.setPositiveButton("추가") { dialog, _ ->
+            val friendId = input.text.toString()
+            if (friendId.isNotEmpty()) {
+                Toast.makeText(this, "친구 '$friendId' 추가 완료", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "친구 아이디를 입력해주세요", Toast.LENGTH_SHORT).show()
+            }
+            dialog.dismiss()
+        }
+
+        builder.setNegativeButton("취소") { dialog, _ ->
+            dialog.cancel()
+        }
+
+        builder.show()
     }
 
     // 일정 추가 팝업 다이얼로그
@@ -126,6 +159,7 @@ class MainActivity : AppCompatActivity() {
         // 일정 저장 버튼 클릭 리스너 설정
         dialogView.findViewById<View>(R.id.btn_save_event).setOnClickListener {
             // 일정 추가 로직
+            Toast.makeText(this, "일정 추가 완료", Toast.LENGTH_SHORT).show()
             alertDialog.dismiss()
         }
     }
