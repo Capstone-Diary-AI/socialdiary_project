@@ -5,31 +5,30 @@ package com.example.socialdiary_project.ui.theme
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import android.widget.Button
 import android.app.DatePickerDialog
-import com.example.socialdiary_project.R
+import com.example.socialdiary_project.databinding.ActivityDiaryEntryBinding
 
 class DiaryEntryActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityDiaryEntryBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_diary_entry)
-
-        val dateButton = findViewById<Button>(R.id.button_select_date)
-        val locationButton = findViewById<Button>(R.id.button_refresh_location)
-        val saveButton = findViewById<Button>(R.id.button_save_diary)
+        binding = ActivityDiaryEntryBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // 날짜 선택 버튼 이벤트
-        dateButton.setOnClickListener {
+        binding.buttonSelectDate.setOnClickListener {
             showDatePickerDialog()
         }
 
         // 위치 갱신 버튼 이벤트
-        locationButton.setOnClickListener {
+        binding.buttonRefreshLocation.setOnClickListener {
             // 위치 갱신 로직
         }
 
         // 저장 버튼 이벤트
-        saveButton.setOnClickListener {
+        binding.buttonSaveDiary.setOnClickListener {
             // 일기 저장 로직
         }
     }

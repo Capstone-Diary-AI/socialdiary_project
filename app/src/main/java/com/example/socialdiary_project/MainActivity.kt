@@ -1,96 +1,79 @@
-// 파일명: MainActivity.kt
 package com.example.socialdiary_project
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.EditText
-import android.widget.ImageButton
-import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewpager2.widget.ViewPager2
+import com.example.socialdiary_project.databinding.ActivityMainBinding
 import com.example.socialdiary_project.ui.theme.DiaryEntryActivity
 import com.example.socialdiary_project.ui.theme.SettingsActivity
 import com.example.socialdiary_project.ui.theme.ViewPagerFragmentAdapter
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.viewpager2.widget.ViewPager2
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var pageTitle: TextView
-    private lateinit var viewPager: ViewPager2
-    private lateinit var bottomNavigationView: BottomNavigationView
-    private lateinit var addButton: ImageButton
-    private lateinit var settingsButton: ImageButton
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        // 상단 네비게이션 바 버튼 초기화
-        pageTitle = findViewById(R.id.page_title)
-        addButton = findViewById(R.id.add_button)
-        settingsButton = findViewById(R.id.settings_button)
-
-        viewPager = findViewById(R.id.viewPager)
-        bottomNavigationView = findViewById(R.id.bottom_navigation)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val fragmentAdapter = ViewPagerFragmentAdapter(this)
-        viewPager.adapter = fragmentAdapter
+        binding.viewPager.adapter = fragmentAdapter
 
         // 상단 버튼 이벤트 설정
-        addButton.setOnClickListener {
-            when (viewPager.currentItem) {
+        binding.addButton.setOnClickListener {
+            when (binding.viewPager.currentItem) {
                 0 -> showFriendManagementDialog() // 친구 관리 팝업
                 1 -> startActivity(Intent(this, DiaryEntryActivity::class.java)) // 일기 작성 화면 이동
                 2 -> showAddScheduleDialog() // 일정 추가 팝업
             }
         }
 
-        settingsButton.setOnClickListener {
+        binding.settingsButton.setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
         }
 
         // ViewPager와 하단 네비게이션 바 연결
-        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+        binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 when (position) {
                     0 -> {
-                        pageTitle.text = "친구 목록"
-                        bottomNavigationView.menu.findItem(R.id.nav_friends).isChecked = true
+                        binding.pageTitle.text = "친구 목록"
+                        binding.bottomNavigation.menu.findItem(R.id.nav_friends).isChecked = true
                     }
                     1 -> {
-                        pageTitle.text = "일기 목록"
-                        bottomNavigationView.menu.findItem(R.id.nav_diary).isChecked = true
+                        binding.pageTitle.text = "일기 목록"
+                        binding.bottomNavigation.menu.findItem(R.id.nav_diary).isChecked = true
                     }
                     2 -> {
-                        pageTitle.text = "캘린더"
-                        bottomNavigationView.menu.findItem(R.id.nav_calendar).isChecked = true
+                        binding.pageTitle.text = "캘린더"
+                        binding.bottomNavigation.menu.findItem(R.id.nav_calendar).isChecked = true
                     }
                 }
             }
         })
 
-        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+        binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.nav_friends -> viewPager.currentItem = 0
-                R.id.nav_diary -> viewPager.currentItem = 1
-                R.id.nav_calendar -> viewPager.currentItem = 2
+                R.id.nav_friends -> binding.viewPager.currentItem = 0
+                R.id.nav_diary -> binding.viewPager.currentItem = 1
+                R.id.nav_calendar -> binding.viewPager.currentItem = 2
             }
             true
         }
 
         // 초기 페이지를 일기 목록으로 설정
-        viewPager.currentItem = 1
+        binding.viewPager.currentItem = 1
     }
 
     // 친구 관리 팝업 다이얼로그
     private fun showFriendManagementDialog() {
         val dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_friend_management, null)
-
         val dialogBuilder = AlertDialog.Builder(this)
             .setView(dialogView)
             .setTitle("친구 관리")
@@ -101,53 +84,22 @@ class MainActivity : AppCompatActivity() {
 
         // 팝업 내부 버튼 클릭 리스너 설정
         dialogView.findViewById<View>(R.id.btn_add_friend).setOnClickListener {
-            showAddFriendDialog() // 친구 추가 다이얼로그 표시
+            // 친구 추가 로직
             alertDialog.dismiss()
         }
         dialogView.findViewById<View>(R.id.btn_remove_friend).setOnClickListener {
             // 친구 삭제 로직
-            Toast.makeText(this, "친구 삭제 기능 실행", Toast.LENGTH_SHORT).show()
             alertDialog.dismiss()
         }
         dialogView.findViewById<View>(R.id.btn_manage_groups).setOnClickListener {
             // 그룹 관리 로직
-            Toast.makeText(this, "그룹 관리 기능 실행", Toast.LENGTH_SHORT).show()
             alertDialog.dismiss()
         }
-    }
-
-    // 친구 추가 다이얼로그
-    private fun showAddFriendDialog() {
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("친구 추가")
-
-        // 다이얼로그에 EditText 추가
-        val input = EditText(this)
-        input.hint = "친구 아이디를 입력하세요"
-        builder.setView(input)
-
-        // 다이얼로그 버튼 설정
-        builder.setPositiveButton("추가") { dialog, _ ->
-            val friendId = input.text.toString()
-            if (friendId.isNotEmpty()) {
-                Toast.makeText(this, "친구 '$friendId' 추가 완료", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "친구 아이디를 입력해주세요", Toast.LENGTH_SHORT).show()
-            }
-            dialog.dismiss()
-        }
-
-        builder.setNegativeButton("취소") { dialog, _ ->
-            dialog.cancel()
-        }
-
-        builder.show()
     }
 
     // 일정 추가 팝업 다이얼로그
     private fun showAddScheduleDialog() {
         val dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_add_schedule, null)
-
         val dialogBuilder = AlertDialog.Builder(this)
             .setView(dialogView)
             .setTitle("일정 추가")
@@ -159,7 +111,6 @@ class MainActivity : AppCompatActivity() {
         // 일정 저장 버튼 클릭 리스너 설정
         dialogView.findViewById<View>(R.id.btn_save_event).setOnClickListener {
             // 일정 추가 로직
-            Toast.makeText(this, "일정 추가 완료", Toast.LENGTH_SHORT).show()
             alertDialog.dismiss()
         }
     }
