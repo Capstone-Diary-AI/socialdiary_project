@@ -1,19 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- values/themes.xml -->
 <resources>
-    <!-- 앱 기본 테마를 DayNight 테마로 설정 -->
-    <style name="Theme.Socialdiary_project" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Customize your theme here -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="actionBarSize">?attr/actionBarSize</item>
+    <!-- 라이트 모드 테마 설정 -->
+    <style name="Theme.Socialdiary.Light" parent="Theme.Socialdiary">
+        <item name="android:colorBackground">@color/appColorBackgroundLight</item>
+        <item name="android:textColor">@color/appColorTextPrimaryLight</item>
     </style>
 
-    <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
-        <!-- Customize your theme here -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="actionBarSize">?attr/actionBarSize</item>
+    <!-- 다크 모드 테마 설정 -->
+    <style name="Theme.Socialdiary.Dark" parent="Theme.Socialdiary">
+        <item name="android:colorBackground">@color/appColorBackgroundDark</item> <!-- 검정 배경 -->
+        <item name="android:textColor">@color/appColorTextPrimaryDark</item> <!-- 흰색 텍스트 -->
     </style>
 </resources>

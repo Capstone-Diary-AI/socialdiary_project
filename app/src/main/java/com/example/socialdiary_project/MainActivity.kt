@@ -1,9 +1,13 @@
+// MainActivity.kt
+// 앱의 메인 화면을 담당하는 액티비티로, ViewPager와 BottomNavigationView를 통해
+// 친구 목록, 일기 목록, 캘린더 화면을 전환하며 표시
 package com.example.socialdiary_project
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.Toolbar
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.socialdiary_project.databinding.ActivityMainBinding
@@ -28,11 +32,12 @@ class MainActivity : AppCompatActivity() {
         binding.addButton.setOnClickListener {
             when (binding.viewPager.currentItem) {
                 0 -> showFriendManagementDialog() // 친구 관리 팝업
-                1 -> startActivity(Intent(this, DiaryEntryActivity::class.java)) // 일기 작성 화면 이동
+                1 -> startActivity(Intent(this, DiaryEntryActivity::class.java)) // 일기 작성 화면으로 이동
                 2 -> showAddScheduleDialog() // 일정 추가 팝업
             }
         }
 
+        // 설정 버튼 클릭 시 직접 설정 페이지로 이동
         binding.settingsButton.setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
         }

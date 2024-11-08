@@ -1,5 +1,6 @@
-<!-- fragment_calendar.xml
-     캘린더를 표시하는 레이아웃 -->
+<!-- fragment_calendar.xml -->
+<!-- CalendarFragment에서 사용되는 캘린더 레이아웃 -->
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -11,5 +12,4 @@
         android:id="@+id/calendar_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
 </LinearLayout>

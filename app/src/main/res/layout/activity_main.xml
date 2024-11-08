@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- activity_main.xml -->
+<!-- MainActivity에서 사용되는 메인 화면 레이아웃 -->
+
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -14,57 +16,42 @@
         app:titleTextColor="@android:color/white"
         android:elevation="4dp">
 
-        <!-- 상단 네비게이션 레이아웃 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <!-- 왼쪽 페이지 이름 -->
             <TextView
                 android:id="@+id/page_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="일기 목록"
-                android:textColor="@android:color/black"
+                android:textColor="@color/appColorTextPrimaryLight"
                 android:textSize="18sp" />
 
-            <!-- 오른쪽 + 버튼과 설정 버튼 -->
-            <LinearLayout
+            <ImageButton
+                android:id="@+id/add_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:src="@drawable/ic_add"
+                android:background="?attr/selectableItemBackgroundBorderless" />
 
-                <!-- + 버튼 -->
-                <ImageButton
-                    android:id="@+id/add_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_add"
-                    android:background="?attr/selectableItemBackgroundBorderless" />
-
-                <!-- 설정 버튼 -->
-                <ImageButton
-                    android:id="@+id/settings_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_settings"
-                    android:contentDescription="Settings"
-                    android:background="?attr/selectableItemBackgroundBorderless" />
-            </LinearLayout>
-
+            <ImageButton
+                android:id="@+id/settings_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_settings"
+                android:contentDescription="Settings"
+                android:background="?attr/selectableItemBackgroundBorderless" />
         </LinearLayout>
-
     </androidx.appcompat.widget.Toolbar>
 
-    <!-- ViewPager2 -->
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <!-- 하단 네비게이션 바 -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
@@ -73,6 +60,6 @@
         app:menu="@menu/navigation_menu"
         app:itemIconTint="@color/navigation_item_colors"
         app:itemTextColor="@color/navigation_item_colors"
-        android:background="@color/white" />
+        android:background="@color/navigationBarColor" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

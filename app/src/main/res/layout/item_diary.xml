@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- item_diary.xml -->
+<!-- DiaryListFragment의 일기 목록에서 각 일기를 나타내는 개별 아이템 레이아웃 -->
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"

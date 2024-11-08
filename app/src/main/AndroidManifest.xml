@@ -6,73 +6,79 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_app_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_app_logo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Socialdiary_project"
+        android:theme="@style/Theme.Socialdiary.Dark"
         tools:targetApi="31">
 
-        <!-- LoginActivity를 첫 번째 화면으로 설정 -->
-        <activity
-            android:name=".ui.theme.LoginActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+    <!-- LoginActivity를 첫 번째 화면으로 설정 -->
+    <activity
+        android:name=".ui.theme.LoginActivity"
+        android:exported="true"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.Socialdiary.Light"> <!-- 기본 라이트 테마 설정 -->
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
 
-        <!-- MainActivity 선언 -->
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+    <!-- MainActivity 선언 -->
+    <activity
+        android:name=".MainActivity"
+        android:exported="true"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.Socialdiary.Light" /> <!-- 기본 라이트 테마 설정 -->
 
-        <!-- 다른 Activity들 선언 -->
-        <activity
-            android:name=".ui.theme.DiaryListActivity"
-            android:label="일기 목록"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+    <!-- 다른 Activity들 선언 -->
+    <activity
+        android:name=".ui.theme.DiaryListActivity"
+        android:label="일기 목록"
+        android:theme="@style/Theme.Socialdiary.Light" /> <!-- 기본 라이트 테마 설정 -->
 
-        <activity
-            android:name=".ui.theme.FriendListActivity"
-            android:label="친구 목록"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+    <activity
+        android:name=".ui.theme.FriendListActivity"
+        android:label="친구 목록"
+        android:theme="@style/Theme.Socialdiary.Light" /> <!-- 기본 라이트 테마 설정 -->
 
-        <activity
-            android:name=".ui.theme.CalendarActivity"
-            android:label="캘린더"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+    <activity
+        android:name=".ui.theme.CalendarActivity"
+        android:label="캘린더"
+        android:theme="@style/Theme.Socialdiary.Light" /> <!-- 기본 라이트 테마 설정 -->
 
-        <activity
-            android:name=".ui.theme.DiaryEntryActivity"
-            android:label="일기 작성"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+    <activity
+        android:name=".ui.theme.DiaryEntryActivity"
+        android:label="일기 작성"
+        android:theme="@style/Theme.Socialdiary.Light" /> <!-- 기본 라이트 테마 설정 -->
 
-        <activity
-            android:name=".ui.theme.SettingsActivity"
-            android:label="설정"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+    <activity
+        android:name=".ui.theme.SettingsActivity"
+        android:label="설정"
+        android:theme="@style/Theme.Socialdiary.Light"
+        android:configChanges="uiMode|screenSize|orientation" />
 
-        <!-- 새로 추가된 Activity들 선언 -->
-        <activity
-            android:name=".ui.theme.FindIdActivity"
-            android:label="아이디 찾기"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+    <activity
+        android:name=".ui.theme.FindIdActivity"
+        android:label="아이디 찾기"
+        android:theme="@style/Theme.Socialdiary.Light" /> <!-- 기본 라이트 테마 설정 -->
 
-        <activity
-            android:name=".ui.theme.FindPasswordActivity"
-            android:label="비밀번호 찾기"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+    <activity
+        android:name=".ui.theme.FindPasswordActivity"
+        android:label="비밀번호 찾기"
+        android:theme="@style/Theme.Socialdiary.Light" /> <!-- 기본 라이트 테마 설정 -->
 
-        <activity
-            android:name=".ui.theme.RegisterActivity"
-            android:label="회원가입"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+    <activity
+        android:name=".ui.theme.RegisterActivity"
+        android:label="회원가입"
+        android:theme="@style/Theme.Socialdiary.Light" /> <!-- 기본 라이트 테마 설정 -->
+
+    <!-- LoadingActivity 추가 -->
+    <activity
+        android:name=".LoadingActivity"
+        android:label="로딩 중"
+        android:theme="@style/Theme.Socialdiary.Light" /> <!-- 기본 라이트 테마 설정 -->
 
     </application>
 

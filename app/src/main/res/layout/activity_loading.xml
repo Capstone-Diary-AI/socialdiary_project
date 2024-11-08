@@ -1,0 +1,28 @@
+<!-- res/layout/activity_loading.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8f3e6"> <!-- 따뜻한 색상 배경 -->
+
+    <!-- 중앙에 로고 이미지 표시 -->
+    <ImageView
+        android:id="@+id/loadingLogo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_app_logo"
+        android:contentDescription="Loading Logo" />
+
+    <!-- 하단에 '잇다' 텍스트 표시 -->
+    <TextView
+        android:id="@+id/loadingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loadingLogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="잇다"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-light"
+        android:textColor="#4f4f4f" />
+</RelativeLayout>

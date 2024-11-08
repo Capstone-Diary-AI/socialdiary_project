@@ -1,20 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- values/colors.xml -->
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="color_bright">#FFFFFF</color> <!-- 밝은 색상 -->
-    <color name="bright_highlight">#FF4081</color>
-    <color name="dim_color">#D3D3D3</color>
-    <color name="color_active">#000000</color> <!-- 검정색 -->
-    <color name="color_inactive">#808080</color> <!-- 회색 -->
-    <color name="color_background">#FFFFFF</color> <!-- 흰색 배경 -->
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
+    <!-- 기본 색상 -->
+    <color name="appColorPrimary">#FF9800</color> <!-- 로고 색상에 맞춘 기본 색상 -->
+    <color name="appColorPrimaryVariant">#FF5722</color>
     <color name="colorAccent">#03DAC5</color>
-    <color name="colorBackground">#FFFFFF</color> <!-- 기본 배경색 (라이트 모드 기준) -->
+
+    <!-- 라이트 모드 배경 및 텍스트 색상 -->
+    <color name="appColorBackgroundLight">#FFFFFF</color> <!-- 밝은 배경 -->
+    <color name="appColorTextPrimaryLight">#000000</color> <!-- 어두운 텍스트 -->
+    <!-- 라이트 모드 네비게이션 바 배경 색상 -->
+    <color name="navigationBarColor">#FFFFFF</color>
+
+    <!-- 다크 모드에서 사용되는 색상을 기본 모드에 임시로 추가 -->
+    <color name="appColorBackgroundDark">#FFFFFF</color> <!-- 기본 모드에 임시 밝은 색상 설정 -->
+    <color name="appColorTextPrimaryDark">#000000</color> <!-- 기본 모드에 임시 어두운 색상 설정 -->
+
+    <!-- 공통 색상 -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="appColorBright">#FFFFFF</color> <!-- 밝은 색 텍스트/아이콘용 -->
+    <color name="appColorDim">#BBBBBB</color> <!-- 덜 강조된 텍스트/아이콘용 -->
 </resources>

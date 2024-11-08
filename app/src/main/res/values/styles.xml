@@ -1,0 +1,18 @@
+<!-- styles.xml -->
+<resources>
+    <!-- 기본 앱 테마 정의 -->
+    <style name="Theme.Socialdiary" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/appColorPrimary</item>
+        <item name="colorPrimaryVariant">@color/appColorPrimaryVariant</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@color/appColorBackgroundLight</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- 버튼 기본 스타일 -->
+    <style name="Widget.Button.Primary" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/appColorPrimary</item>
+        <item name="android:textColor">@color/appColorBright</item>
+    </style>
+</resources>

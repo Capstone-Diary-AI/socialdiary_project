@@ -1,5 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- navigation_item_colors.xml -->
+<!-- 하단 네비게이션의 아이템 색상을 정의하는 파일 -->
+
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:color="@color/color_active" android:state_checked="true" /> <!-- 선택된 상태는 검정색 -->
-    <item android:color="@color/color_inactive" /> <!-- 선택되지 않은 상태는 진한 회색 -->
+    <item android:color="@color/appColorPrimary" android:state_checked="true" /> <!-- 선택된 상태 색상 -->
+    <item android:color="@color/appColorDim" /> <!-- 선택되지 않은 상태 색상 -->
 </selector>

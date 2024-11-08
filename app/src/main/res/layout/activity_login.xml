@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- activity_login.xml -->
+<!-- LoginActivity에서 사용되는 로그인 화면 레이아웃 -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp"
     android:gravity="center">
@@ -29,7 +31,6 @@
         android:text="로그인"
         android:layout_marginTop="24dp"/>
 
-    <!-- '메인' 버튼 추가 -->
     <Button
         android:id="@+id/button_main"
         android:layout_width="wrap_content"
@@ -37,7 +38,6 @@
         android:text="메인"
         android:layout_marginTop="16dp"/>
 
-    <!-- 아이디 찾기, 비밀번호 찾기, 회원가입 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -50,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="아이디 찾기"
-            android:textColor="@android:color/black"
+            app:titleTextColor="@color/appColorTextPrimaryLight"
             android:paddingEnd="8dp"/>
 
         <TextView
@@ -58,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="비밀번호 찾기"
-            android:textColor="@android:color/black"
+            app:titleTextColor="@color/appColorTextPrimaryLight"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"/>
 
@@ -67,9 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="회원가입"
-            android:textColor="@android:color/black"
+            app:titleTextColor="@color/appColorTextPrimaryLight"
             android:paddingStart="8dp"/>
-
     </LinearLayout>
-
 </LinearLayout>

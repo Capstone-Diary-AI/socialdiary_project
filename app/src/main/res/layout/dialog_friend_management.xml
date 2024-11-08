@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- dialog_friend_management.xml -->
+<!-- 친구 관리 팝업 다이얼로그 레이아웃 (MainActivity에서 호출) -->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -22,5 +24,4 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="그룹 관리" />
-
 </LinearLayout>
