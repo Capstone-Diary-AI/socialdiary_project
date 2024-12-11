@@ -1,59 +1,83 @@
-<!-- activity_register.xml -->
-<LinearLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="@drawable/login"
+    android:alpha="0.8">
 
-    <!-- Toolbar 추가 -->
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/register_toolbar"
+    <!-- AppBarLayout으로 네비게이션바를 상단에 고정 -->
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/navigationBarColor"
-        android:title="회원가입"
-        android:titleTextColor="@color/appColorTextPrimaryLight"
-        app:navigationIcon="@drawable/ic_back" />
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
 
-    <!-- 중앙에 정렬된 내용 -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/register_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/navigationBarColor"
+            android:title="회원가입"
+            android:titleTextColor="@color/appColorTextPrimaryLight"
+            app:navigationIcon="@drawable/ic_back"
+            app:navigationIconTint="@color/appColorTextPrimaryLight" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- 회원가입 화면의 주요 내용 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:gravity="center"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <!-- 여기에 회원가입 UI 요소 추가 -->
+        <!-- 닉네임 입력 -->
         <EditText
-            android:id="@+id/register_username_input"
+            android:id="@+id/nickname_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="닉네임"
+            android:inputType="textPersonName"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/black"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- 아이디 입력 -->
+        <EditText
+            android:id="@+id/username_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="아이디"
-            android:inputType="textPersonName"/>
+            android:inputType="textPersonName"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/black"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
 
+        <!-- 비밀번호 입력 -->
         <EditText
-            android:id="@+id/register_password_input"
+            android:id="@+id/password_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="비밀번호"
             android:inputType="textPassword"
-            android:layout_marginTop="16dp"/>
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/black"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp" />
 
-        <EditText
-            android:id="@+id/register_password_confirm_input"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="비밀번호 확인"
-            android:inputType="textPassword"
-            android:layout_marginTop="16dp"/>
-
+        <!-- 회원가입 버튼 -->
         <Button
             android:id="@+id/register_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="회원가입"
-            android:layout_marginTop="24dp"/>
-
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
     </LinearLayout>
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

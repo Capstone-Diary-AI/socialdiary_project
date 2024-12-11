@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/appColorBackgroundLight">
 
     <!-- 상단 여백을 추가하여 네비게이션 바와 겹치지 않도록 설정 -->
     <ListView

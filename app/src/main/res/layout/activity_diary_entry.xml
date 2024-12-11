@@ -1,57 +1,107 @@
-<!-- activity_diary_entry.xml -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/appColorBackgroundLight">
 
     <!-- Toolbar 추가 -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/diary_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/navigationBarColor"
+        android:background="@color/appColorBackgroundLight"
         android:title="일기 작성"
         android:titleTextColor="@color/appColorTextPrimaryLight"
         app:navigationIcon="@drawable/ic_back"
         app:navigationIconTint="@color/appColorTextPrimaryLight"/>
 
+    <!-- 제목 입력란 -->
     <EditText
         android:id="@+id/edittext_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="제목" />
+        android:hint="제목을 입력하세요"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
+        android:padding="12dp"/>
 
-    <Button
-        android:id="@+id/button_select_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="날짜 선택" />
-
-    <TextView
-        android:id="@+id/textview_location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="위치를 가져오는 중..." />
-
-    <Button
-        android:id="@+id/button_refresh_location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="위치 갱신" />
-
-    <EditText
-        android:id="@+id/edittext_content"
+    <!-- 날짜 및 위치 선택 영역 -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="일기 내용" />
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical">
 
+        <Button
+            android:id="@+id/button_select_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="날짜 선택"
+            android:backgroundTint="@color/appColorPrimary"
+            android:textColor="@android:color/white"
+            android:drawableLeft="@drawable/ic_calendar"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/textview_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="위치를 가져오는 중..."
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/button_refresh_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="위치 갱신"
+            android:backgroundTint="@color/appColorPrimary"
+            android:textColor="@android:color/white"
+            android:drawableLeft="@drawable/ic_refresh"
+            android:padding="8dp" />
+    </LinearLayout>
+
+    <!-- 일기 작성 영역 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp"
+        android:padding="12dp">
+
+        <EditText
+            android:id="@+id/edittext_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="오늘의 이야기를 기록해보세요..."
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:lines="10"
+            android:maxLines="15"
+            android:scrollbars="vertical"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray" />
+    </ScrollView>
+
+    <!-- 저장 버튼 -->
     <Button
         android:id="@+id/button_save_diary"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="저장" />
+        android:text="저장"
+        android:backgroundTint="@color/appColorPrimary"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:padding="12dp" />
 
 </LinearLayout>

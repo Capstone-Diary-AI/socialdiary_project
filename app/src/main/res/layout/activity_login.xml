@@ -2,19 +2,25 @@
 <!-- LoginActivity에서 사용되는 로그인 화면 레이아웃 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@drawable/login"
+    android:alpha="0.8"> <!-- 배경 이미지 설정 -->
 
     <EditText
         android:id="@+id/username_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="아이디"
-        android:inputType="textPersonName"/>
+        android:inputType="textPersonName"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/password_input"
@@ -22,21 +28,29 @@
         android:layout_height="wrap_content"
         android:hint="비밀번호"
         android:inputType="textPassword"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="로그인"
-        android:layout_marginTop="24dp"/>
+        android:layout_marginTop="24dp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" /> <!-- 글씨 두껍게 -->
 
     <Button
         android:id="@+id/button_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="메인"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" /> <!-- 글씨 두껍게 -->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,7 +64,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="아이디 찾기"
-            app:titleTextColor="@color/appColorTextPrimaryLight"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
             android:paddingEnd="8dp"/>
 
         <TextView
@@ -58,7 +73,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="비밀번호 찾기"
-            app:titleTextColor="@color/appColorTextPrimaryLight"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"/>
 
@@ -67,7 +83,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="회원가입"
-            app:titleTextColor="@color/appColorTextPrimaryLight"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
             android:paddingStart="8dp"/>
     </LinearLayout>
 </LinearLayout>

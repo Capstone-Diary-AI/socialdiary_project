@@ -1,80 +1,111 @@
-<!-- activity_settings.xml -->
-<!-- SettingsActivity에서 사용되는 설정 화면 레이아웃 -->
-
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/navigationBarColor">
+    android:background="@color/appColorBackgroundLight">
 
+    <!-- Toolbar 고정 -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/settings_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/navigationBarColor"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/appColorBackgroundLight"
         app:title="설정"
         app:titleTextColor="@color/appColorTextPrimaryLight"
-        app:navigationIcon="@drawable/ic_back" />
+        app:navigationIcon="@drawable/ic_back"
+        app:navigationIconTint="@color/appColorTextPrimaryLight" />
 
-    <LinearLayout
-        android:id="@+id/content_area"
+    <!-- 내용 영역 -->
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp"
-        android:layout_marginTop="?attr/actionBarSize">
+        android:layout_marginTop="?attr/actionBarSize"
+        android:padding="16dp">
 
-        <RadioGroup
-            android:id="@+id/radioMode"
+        <LinearLayout
+            android:id="@+id/content_area"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Light"
-                android:textColor="@color/appColorTextPrimaryLight"
-                android:buttonTint="@color/colorAccent"
-                android:id="@+id/rbLight"/>
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dark"
-                android:buttonTint="@color/colorAccent"
-                android:textColor="@color/appColorTextPrimaryLight"
-                android:id="@+id/rbDark"/>
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Default"
-                android:buttonTint="@color/colorAccent"
-                android:textColor="@color/appColorTextPrimaryLight"
-                android:id="@+id/rbDefault"/>
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="글꼴 선택"
-            android:textColor="@color/appColorTextPrimaryLight" />
+            android:orientation="vertical">
 
-        <Spinner
-            android:id="@+id/spinner_font"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <!-- 테마 선택 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="테마 설정"
+                android:textColor="@color/appColorTextPrimaryLight"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="글자 크기 선택"
-            android:textColor="@color/appColorTextPrimaryLight" />
+            <RadioGroup
+                android:id="@+id/radioMode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_horizontal">
 
-        <Spinner
-            android:id="@+id/spinner_font_size"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Light"
+                    android:textColor="@color/appColorTextPrimaryLight"
+                    android:buttonTint="@color/colorAccent"
+                    android:id="@+id/rbLight" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dark"
+                    android:textColor="@color/appColorTextPrimaryLight"
+                    android:buttonTint="@color/colorAccent"
+                    android:id="@+id/rbDark"
+                    android:layout_marginStart="16dp" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Default"
+                    android:textColor="@color/appColorTextPrimaryLight"
+                    android:buttonTint="@color/colorAccent"
+                    android:id="@+id/rbDefault"
+                    android:layout_marginStart="16dp" />
+            </RadioGroup>
+
+            <!-- 폰트 선택 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="폰트 선택"
+                android:textColor="@color/appColorTextPrimaryLight"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <Spinner
+                android:id="@+id/spinner_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/rounded_spinner_background" />
+
+            <!-- 글자 크기 선택 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="글자 크기 선택"
+                android:textColor="@color/appColorTextPrimaryLight"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <Spinner
+                android:id="@+id/spinner_font_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_spinner_background" />
+        </LinearLayout>
+    </ScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

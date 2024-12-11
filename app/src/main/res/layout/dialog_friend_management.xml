@@ -1,8 +1,9 @@
 <!-- dialog_friend_management.xml -->
 <!-- 친구 관리 팝업 다이얼로그 레이아웃 (MainActivity에서 호출) -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp">
@@ -17,11 +18,13 @@
         android:id="@+id/btn_remove_friend"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="친구 삭제" />
 
     <Button
         android:id="@+id/btn_manage_groups"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="그룹 관리" />
 </LinearLayout>

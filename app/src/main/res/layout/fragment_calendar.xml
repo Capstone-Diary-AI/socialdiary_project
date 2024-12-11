@@ -3,13 +3,47 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:paddingTop="?attr/actionBarSize"
+    android:background="@color/appColorBackgroundLight">
+
+    <!-- 캘린더 상단에 현재 선택된 날짜를 표시하는 TextView -->
+
+    <!-- CardView로 감싸 캘린더 스타일 개선 -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@color/appColorBackgroundLight"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/selected_date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp"
+            android:text="11월 29일  :  금요일"
+            android:background="@color/appColorBackgroundLight"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- 일정 목록을 표시할 RecyclerView 추가 -->
 
     <CalendarView
         android:id="@+id/calendar_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <!-- 일정 목록을 표시하는 ListView -->
+    <ListView
+        android:id="@+id/listview_schedule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"/>
 </LinearLayout>
